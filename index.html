@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAME MODAL ===== -->
+  <div id="nameModal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Set your name">
+    <div class="modal__card">
+      <h2>What's your name?</h2>
+      <input id="nameInput" class="modal__input" type="text" placeholder="Enter your name…" maxlength="40" />
+      <div class="modal__actions">
+        <button id="nameSaveBtn" class="modal__btn modal__btn--save">Save</button>
+        <button id="nameCancelBtn" class="modal__btn modal__btn--cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <!-- ===== TOP CONTROLS ===== -->
+    <div class="top-controls">
+      <button id="themeToggle" class="ctrl-btn" title="Toggle Light / Dark mode">
+        <span id="themeIcon">🌙</span> Theme
+      </button>
+      <button id="nameEditBtn" class="ctrl-btn" title="Set your name">
+        ✏️ Name
+      </button>
+    </div>
+
+    <!-- ===== GREETING CARD ===== -->
+    <div class="card greeting-card">
+      <p id="clock"    class="clock"></p>
+      <p id="dateStr"  class="date-str"></p>
+      <h1 id="greeting" class="greeting"></h1>
+    </div>
+
+    <!-- ===== BOTTOM GRID ===== -->
+    <div class="grid">
+
+      <!-- Focus Timer -->
+      <div class="card timer-card">
+        <h2 class="card-title">Focus Timer</h2>
+        <div id="timerDisplay" class="timer-display" aria-live="polite">25:00</div>
+
+        <div class="timer-duration-row">
+          <label for="pomoDuration" class="small-label">Minutes:</label>
+          <input id="pomoDuration" class="duration-input" type="number" min="1" max="120" value="25" />
+          <button id="applyDuration" class="pill-btn">Set</button>
+        </div>
+
+        <div class="timer-controls">
+          <button id="timerStart" class="pill-btn pill-btn--primary">Start</button>
+          <button id="timerStop"  class="pill-btn" disabled>Stop</button>
+          <button id="timerReset" class="pill-btn">Reset</button>
+        </div>
+        <p id="timerStatus" class="timer-status"></p>
+      </div>
+
+      <!-- Tasks -->
+      <div class="card tasks-card">
+        <h2 class="card-title">Tasks</h2>
+
+        <div class="task-input-row">
+          <input id="todoInput" class="task-input" type="text" placeholder="Add a new task…" maxlength="120" />
+          <button id="todoAdd" class="pill-btn pill-btn--primary">Add</button>
+        </div>
+
+        <div class="task-sort-row">
+          <label for="todoSort" class="small-label">Sort:</label>
+          <select id="todoSort" class="sort-select">
+            <option value="default">Default</option>
+            <option value="az">A → Z</option>
+            <option value="za">Z → A</option>
+            <option value="done">Done last</option>
+          </select>
+        </div>
+
+        <ul id="todoList" class="task-list" aria-label="Task list"></ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="card links-card">
+        <h2 class="card-title">Quick Links</h2>
+
+        <div class="link-input-row">
+          <input id="linkLabel" class="link-input" type="text"  placeholder="Link name" maxlength="40" />
+          <input id="linkUrl"   class="link-input" type="url"   placeholder="URL"       maxlength="200" />
+          <button id="linkAdd" class="pill-btn pill-btn--primary">Add Link</button>
+        </div>
+
+        <div id="linkGrid" class="link-grid"></div>
+      </div>
+
+    </div><!-- /grid -->
+  </div><!-- /page -->
+
+  <script src="js/app.js"></script>
+</body>
+</html>
