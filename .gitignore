@@ -1,0 +1,12 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+
+# Node (if ever added)
+node_modules/
+
+# .kiro folder is intentionally NOT ignored
+# so it gets included in the repository as required
